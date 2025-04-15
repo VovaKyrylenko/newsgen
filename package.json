@@ -1,0 +1,78 @@
+{
+  "name": "newsgen",
+  "version": "0.1.0-alpha",
+  "description": "Framework for building your own news delivery pipeline. Transparent. Modular. Yours. ",
+  "type": "module",
+  "bin": {
+    "newsgen": "./bin/index.js"
+  },
+  "files": [
+    "bin/",
+    "commands/",
+    "templates/",
+    "types/",
+    "engine.js"
+  ],
+  "prepublishOnly": "npm run check",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VovaKyrylenko/newsgen"
+  },
+  "bugs": {
+    "url": "https://github.com/VovaKyrylenko/newsgen/issues"
+  },
+  "homepage": "https://github.com/VovaKyrylenko/newsgen#readme",
+  "keywords": [
+    "cli",
+    "starter",
+    "news",
+    "create",
+    "engine",
+    "content",
+    "rss"
+  ],
+  "author": "Volodymyr Kyrylenko",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "tsx bin/index.ts test-project",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "build": "tsc",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run format && npm run typecheck && npm run test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/node": "^22.14.1",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.29.1",
+    "vitest": "^3.1.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "boxen": "^8.0.1",
+    "colorette": "^2.0.20",
+    "ora": "^8.2.0",
+    "prompts": "^2.4.2"
+  }
+}

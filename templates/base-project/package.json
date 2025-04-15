@@ -1,0 +1,10 @@
+{
+  "name": "my-news-bot",
+  "type": "module",
+  "scripts": {
+    "start": "tsx index.ts"
+  },
+  "dependencies": {
+    "tsx": "^4.7.0"
+  }
+}
